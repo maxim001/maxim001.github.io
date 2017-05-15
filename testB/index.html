@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>settings</title>
+    <style>
+        .top_row,
+        .bottom_row {
+            text-align: center;
+        }
+        .mid_left,
+        .mid_right {
+            vertical-align: middle;
+        }
+        #sheet {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        #point {
+            display: inline-block;
+            position: absolute;
+            font-size: 10px;
+            color: red;
+            width: 10px;
+        }
+        .hold {
+            font-family: Arial;
+            border: 1px solid #000;
+            margin: 0 100px;
+        }
+        .layer {
+            border: 1px solid #000;
+            margin: 5px;
+            padding: 10px;
+        }
+        .rel_data,
+        .abs_data {
+            display: inline-block;
+            border: 1px solid #000;
+            margin: 5px;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .rel_data p {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="preview">
+        <table class="sketch">
+            <tr><td></td><td class="top_row">A</td><td></td></tr>
+            <tr class="middle_row">
+                <td class="mid_left">D</td>
+                <td id="sheet">
+                    <span id="point">+</span>
+                </td>
+                <td class="mid_right">B</td>
+            </tr>
+            <tr><td></td><td class="bottom_row">C</td><td></td></tr>
+        </table>
+        <div class="holders">
+            <span class="hold">X</span><b>Зажимы</b><span class="hold">X</span>
+        </div>
+    </div>
+    <div class="layer">
+        <h3>Лист: мм</h3>
+        <p> X <input type="text" id="sizeX">
+        Y <input type="text" id="sizeY">
+        <button type="button" onclick="setResize()">Ok</button>
+        </p>
+    </div>
+    <div class="row">
+        <div class="rel_data">
+            <h3>Привязка: мм</h3>
+            <p>A <input type="text" id="sideA"></p>
+            <p>D <input type="text" id="sideD"> B <input type="text" id="sideB"></p>
+            <p>C <input type="text" id="sideC"></p>
+        </div>
+        <div class="abs_data">
+            <h3>Абсолютные координаты: мм</h3>
+            <p>X <input type="text" id="absCoordX"></input></p>
+            <p>Y <input type="text" id="absCoordY"></input></p>
+            <button type="button" onclick="myFunction()">Вычислить</button>
+        </div>
+    </div>
+    <script>
+        function setResize() {
+            document.getElementById('sheet').style.width = document.getElementById('sizeX').value + 'px';
+            document.getElementById('sheet').style.height = document.getElementById('sizeY').value + 'px';
+        }
+        function myFunction() {
+            var sX = document.getElementById('sizeX').value;
+            var sY = document.getElementById('sizeY').value;
+            var sA = document.getElementById('sideA').value;
+            var sB = document.getElementById('sideB').value;
+            var sC = document.getElementById('sideC').value;
+            var sD = document.getElementById('sideD').value;
+            var aX;
+            var aY;
+            if (sA == 0) {
+                aY = sC - 1185.5;
+            } else {
+                aY = sY - 1185.5 - sA;
+            }
+            if (sB == 0) {
+                aX = sD - 2003.5;
+            } else {
+                aX = sX - 2003.5 - sB;
+            }
+            document.getElementById('absCoordX').value = aX;
+            document.getElementById('absCoordY').value = aY;
+            document.getElementById('point').style.left = aX + 1999.5 + 'px';
+            document.getElementById('point').style.bottom = aY + 1182.5 + 'px';
+        }
+    </script>
+</body>
+</html>
