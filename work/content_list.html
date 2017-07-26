@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>content</title>
+	<meta name="viewport" content="width=device-width">
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css?v=2.1.5" media="screen"/>
+    <script type="text/javascript" src="fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script type="text/javascript" src="js/nav-left.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+	<script type="text/javascript">
+		$(".fancybox").fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none',
+    padding : 0 ,
+    
+});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header clearfix">
+            <strong><a class="logo" href="index.html">Info-tour</a></strong>
+            <a href="#" id="open-nav"></a>
+            <nav class="nav">
+                <ul class="nav-bar">
+                    <li><a href="#">НАШИ ВИДЕО</a>
+                    </li><li>
+                        <a href="#">ОТЕЛИ</a>
+                    </li><li>
+                        <a href="content_list.html">ВАШИ РЕПОРТАЖИ</a></li>
+                        <li>
+                           <form action="#" method="post">
+                             <input type="text" name="search-field"><input type="submit" name="submit" value="Поиск">
+                           </form> 
+                        </li>
+                        <li class="enter"><a href="#test" class="fancybox">ВХОД</a></li>
+                </ul>
+                <div class="login" id="test" style="display:none;">
+        			<form action="#" method="post">
+        				
+        					<div class="legend"><strong>ВХОД</strong></div>
+        					<input type="text" name="username" placeholder="E-mail">
+        					<input type="password" name="password" placeholder="Пароль">
+        					<input type="submit" name="submit" value="Войти">
+        				
+        			</form>
+        			<p>Авторизоваться при помощи</p>
+        			<div class="social">
+        				<a href="#" class="vk">Вконтакте</a>
+        				<a href="#" class="fb">Facebook</a>
+        			</div>
+        			<a href="#" class="err_pass">забыли пароль</a><br>
+        			<a href="#" class="reg">регистрация</a>
+        		</div>
+            </nav>
+        </header>
+        <main class="main clearfix">
+        	<aside class="aside">
+        		<div class="info_box rec">
+        				<b>Информация</b>
+        				<p>
+        					Только зарегистрированные пользователи могут публиковать свою информацию на этом сайте.
+        				</p>
+        		</div>
+        	</aside>
+        	<section class="main_content">
+        		<div class="content">
+        			<h1>Ваше видео</h1>
+        			<div class="teaser clearfix">
+        				<img src="images/03.jpg" alt="">
+        				<div class="text">
+        					<h3>От Дeмерджи до моря пешком. Максимальные впечатления с минимальными затратами.</h3>
+        					<p>Любителям активного отдыха и квестов в духе туристических маршрутов есть шанс ощутить всю прелесть живописной, местами нетронутой крымской природы.</p>        			
+        					<a href="user_page1.html">Подробнее&gt;</a>
+        				</div>
+        			</div>
+        			<div class="teaser clearfix">
+        				<img src="images/02.jpg" alt="">
+        				<div class="text">
+        					<h3>Заголовок обзора</h3>
+        					<p>Здесь содержится краткое описание обзора или вступительный текст, который может быть взят из самой статьи обзора. Пользователь сам может решать, что здесь будет отображаться.</p>
+        					<a href="#">Подробнее&gt;</a>
+        				</div>
+        			</div>
+                    <div class="tab_bottom">
+                        <b>Информация</b>
+                        <p>
+                            Только зарегистрированные пользователи могут публиковать свою информацию на этом сайте.
+                        </p>
+                    </div>
+        		</div>
+        	</section>
+        </main>
+        <footer class="footer">
+            <div class="info">
+                <ul class="bottom_nav">
+                    <li><a href="#">Наши видео</a></li>
+                    <li><a href="#">Отели</a></li>
+                    <li><a href="content_list.html">Ваши репортажи</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                    <span class="temp"><small>Условия пользования контакты и лицензии</small></span>
+            </div>
+        </footer>
+	</div>
+</body>
+</html>
